@@ -16,7 +16,7 @@ const subscribe = async () => {
     let push = await sw.pushManager.subscribe({
       userVisibleOnly: true,
       applicationServerKey:
-        'BOl5NVzVulXULl2_9anP_8WKfx4W2bi2a_TBk6d2cpzUKthgBD72mTdvHj_HLHW4XWF-XV7MpGowC8t-a2wqr_Q'
+        'BJdT478PMr74g2xoyCwPGkkFsBAisxb7u1h51H7WRwKsKQk9IbR9Zxngz-r0rx9S7fMVU3KqkrUDkjKnBGr6QDM'
     });
     console.log(JSON.stringify(push));
   }
