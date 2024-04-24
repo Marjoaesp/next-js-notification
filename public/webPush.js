@@ -17,12 +17,12 @@ webpush.setVapidDetails(
 // This is the same output of calling JSON.stringify on a PushSubscription
 let pushSubscription = {
   endpoint:
-    "https://fcm.googleapis.com/fcm/send/eWei2dUFXXw:APA91bE_ZyynaEHdSHfBOZQBaYlSoGFkx4OhhjeK9lOmvJ0B7TWxY_a1dpo0KDOgzho3I2XIt_RrzEWS0qfHfBOKYn-5UnNq9JHFxkucaVK3PTO-5v3sElMdxfqhyqY1o1eh8dCVruF7",
+    "https://fcm.googleapis.com/fcm/send/cmT2-6jtYoo:APA91bGJcBQZiCLgg9tSAgZxCEPOXcN0bhAt4teD8JMMKn7pbFJzm2fjFypTwjQ0DJyWRdSO1uAtzRO40ViQmZvFpd-MjqxbsMFef49L6HqLnZLvKsgL4R39aGMav-j0L-f_0FCSuJeB",
   expirationTime: null,
   keys: {
     p256dh:
-      "BNsV2R3wRFWCndV3BpQmpv5yuLlmVJZe2STW7LYI8vD0-MUnm9DJyBiSi8JJZjrGY9EahaWOiSe4UDJjhi-rTOU",
-    auth: "dEqjrOAe0oSzjzxgZVxOUQ",
+      "BEGzF5FZ1rtuWO3SRg9VvheXYtpMXoFPG_3WnA7EYJMzmmbSEf3dx0fwhXUX-1k2R9SDPcTrk-igWKsnfM6plY0",
+    auth: "oqo0s9AyHTzTf7pkbqE4og",
   },
 };
 webpush.sendNotification(pushSubscription, 'Your Push Payload Text');
