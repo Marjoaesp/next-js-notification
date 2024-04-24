@@ -6,7 +6,7 @@
   "display": "fullScreen",
   "orientation": "portrait",
   "scope": "/",
-  "start_url": ".",
+  "start_url": "/",
   "icons": [
     {
       "src": "public/images/icons/icon-72x72.png",
