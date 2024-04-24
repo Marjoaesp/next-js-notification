@@ -1,6 +1,6 @@
 "use client";
 import { useEffect } from "react";
-import main from "./service-worker";
+import main from "./service-worker.js";
 
 
 const page = () => {
