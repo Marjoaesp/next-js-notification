@@ -2,7 +2,6 @@ import Link from "next/link";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import Script from "next/script";
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -19,6 +18,7 @@ export default function RootLayout({ children }) {
         
         {children}
         <Script src="/service-worker.js" type="module" crossorigin="use-credentials" as="script" />
+        <Script src="/sw.js" type="module" crossorigin="use-credentials" as="script" />
 
         </body>
     </html>
