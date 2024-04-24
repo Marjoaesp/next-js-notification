@@ -11,18 +11,18 @@ const checkPermission = () => {
         throw new Error("No support for Push API")
     }
 }
+
 const subscribe = async () => {
     let sw = await navigator.serviceWorker.ready;
     let push = await sw.pushManager.subscribe({
       userVisibleOnly: true,
-      applicationServerKey:
-        'BJdT478PMr74g2xoyCwPGkkFsBAisxb7u1h51H7WRwKsKQk9IbR9Zxngz-r0rx9S7fMVU3KqkrUDkjKnBGr6QDM'
+      applicationServerKey:'BGxOXVIvjsl4X-Szk8YzUx_vQuwFS_yJ9m1WdwW_grXfGYs3U5XRgDGWJI6rn3y-0MD_i2TLmwkzmHjtapLiUFo'
     });
     console.log(JSON.stringify(push));
   }
 
 const registerSW = async () => {
-    const registration = await navigator.serviceWorker.register('sw.js');
+    const registration = await navigator.serviceWorker.register('./sw.js');
     return registration;
 }
 
