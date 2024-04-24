@@ -25,4 +25,5 @@ let pushSubscription = {
     auth: "oqo0s9AyHTzTf7pkbqE4og",
   },
 };
+
 webpush.sendNotification(pushSubscription, 'Your Push Payload Text');
