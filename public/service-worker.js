@@ -1,3 +1,5 @@
+
+//Check permissions
 const checkPermission = () => {
   if (!('serviceWorker' in navigator)) {
       throw new Error("No support for service worker!")
@@ -12,11 +14,6 @@ const checkPermission = () => {
   }
 }
 
-const registerSW = async () => {
-  const registration = await navigator.serviceWorker.register('./sw.js');
-  return registration;
-}
-
 const requestNotificationPermission = async () => {
   const permission = await Notification.requestPermission();
 
@@ -25,11 +22,18 @@ const requestNotificationPermission = async () => {
   }
 
 }
+//Register service worker
+const registerSW = async () => {
+  const registration = await navigator.serviceWorker.register('./sw.js');
+  return registration;
+}
+
 const subscribe = async () => {
   let sw = await navigator.serviceWorker.ready;
-  let push = await sw.pushManager.subscribe({
+  let push = await sw.pushManager.subscribe({ //subscribe to notification push, and returns the pushSubcription.
+
     userVisibleOnly: true,
-    applicationServerKey:'BDSIh3BSC70FVGo3fo39aAgTLivEYZv3S60Mn-tGSJY0JTCxe76-TbW2llAXukQHm-Fwc6oiuEnvvDcIWxy57bA'
+    applicationServerKey:'BDSIh3BSC70FVGo3fo39aAgTLivEYZv3S60Mn-tGSJY0JTCxe76-TbW2llAXukQHm-Fwc6oiuEnvvDcIWxy57bA' //Public VAPID key
   });
   console.log(JSON.stringify(push));
 }
