@@ -18,8 +18,8 @@ export default function RootLayout({ children }) {
       <body className={inter.className}>
         
         {children}
-        <Script src="/service-worker.js" type="module" crossorigin="use-credentials" as="script" />
-        <Script src="/sw.js" type="module" crossorigin="use-credentials" as="script" />
+        <Script rel="preload" src="/service-worker.js" type="module" as="script" />
+        <Script rel="preload" src="/sw.js" type="module" as="script" />
 
         </body>
     </html>
