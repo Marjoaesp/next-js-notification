@@ -22,6 +22,7 @@ const requestNotificationPermission = async () => {
   }
 
 }
+
 //Register service worker
 const registerSW = async () => {
   const registration = await navigator.serviceWorker.register('./sw.js');
