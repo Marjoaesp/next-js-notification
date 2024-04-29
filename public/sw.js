@@ -3,7 +3,7 @@ function sendPushNotification() {
     navigator.serviceWorker.ready.then(registration => {
       const options = {
         body: "this notif",
-        icon: "/icon-192x192.png",
+        icon: "/icon-72x72.png",
         vibrate: [100, 50, 20],
         data: {
           dateOfArrival: Date.now(),
@@ -13,9 +13,9 @@ function sendPushNotification() {
           {
             action: "explore",
             title: "explore this new world",
-            icon: "/icon-192x192.png"
+            icon: "/icon-72x72.png"
           },
-          { action: "close", title: "Close", icon: "/icon-192x192.png" }
+          { action: "close", title: "Close", icon: "/icon-72x72.png" }
         ]
       };
 
