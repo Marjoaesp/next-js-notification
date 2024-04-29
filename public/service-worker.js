@@ -28,6 +28,7 @@ const registerSW = async () => {
   const registration = await navigator.serviceWorker.register('./sw.js');
   return registration;
 }
+const refresh = () => window.location.reload(true)
 
 const subscribe = async () => {
   let sw = await navigator.serviceWorker.ready;
@@ -44,6 +45,7 @@ const main = async () => {
   await requestNotificationPermission()
   await registerSW()
   await subscribe()
+  refresh()
 }
 
 export default main;
