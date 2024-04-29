@@ -25,7 +25,7 @@ const requestNotificationPermission = async () => {
 
 //Register service worker
 const registerSW = async () => {
-  const registration = await navigator.serviceWorker.register('/sw.js');
+  const registration = await navigator.serviceWorker.register('./sw.js');
   return registration;
 }
 
@@ -34,7 +34,7 @@ const subscribe = async () => {
   let push = await sw.pushManager.subscribe({ //subscribe to notification push, and returns the pushSubcription.
 
     userVisibleOnly: true,
-    applicationServerKey:'BDSIh3BSC70FVGo3fo39aAgTLivEYZv3S60Mn-tGSJY0JTCxe76-TbW2llAXukQHm-Fwc6oiuEnvvDcIWxy57bA' //Public VAPID key
+    applicationServerKey:'BF2qyHLVbXQ08GjCovZ0f3hbp-HAnkztVhHd2OBvjyJZoHshpzCcpBkRtwV28Fg0nLboj--rHVY14anei5VLqeo' //Public VAPID key
   });
   console.log(JSON.stringify(push));
 }

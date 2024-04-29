@@ -1,4 +1,4 @@
-function sendPushNotification() {
+const sendPushNotification = async () => {
   if ('serviceWorker' in navigator && 'PushManager' in window) {
     navigator.serviceWorker.ready.then(registration => {
       const options = {
