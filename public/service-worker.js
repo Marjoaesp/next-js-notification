@@ -25,7 +25,7 @@ const requestNotificationPermission = async () => {
 
 //Register service worker
 const registerSW = async () => {
-  const registration = await navigator.serviceWorker.register('./sw.js');
+  const registration = await navigator.serviceWorker.register('/sw.js');
   return registration;
 }
 
@@ -43,6 +43,7 @@ const main = async () => {
   checkPermission()
   await requestNotificationPermission()
   await registerSW()
+  await subscribe()
 }
 
 export default main;
