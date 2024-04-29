@@ -43,7 +43,6 @@ const main = async () => {
   checkPermission()
   await requestNotificationPermission()
   await registerSW()
-  await subscribe()
 }
 
 export default main;
