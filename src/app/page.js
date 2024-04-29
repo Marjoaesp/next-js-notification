@@ -2,6 +2,7 @@
 import { useEffect } from "react";
 import main from "../../public/service-worker.js";
 import  sendPushNotification  from "../../public/sw.js";
+import subscribe from "../../public/webPush.js";
 const page = () => {
   
   
@@ -12,6 +13,7 @@ const page = () => {
         <h1 className="font-bold">Push Notifications</h1>
         <div className="flex justify-center space-x-4">
             <button onClick={main} className="m-2 p-2 text-base cursor-pointer bg-gray-300 rounded-sm">Allow notification</button>
+            <button onClick={subscribe} className="m-2 p-2 text-base cursor-pointer bg-gray-300 rounded-sm">Generate Push Subscription</button>
             <button onClick={sendPushNotification} className="m-2 p-2 text-base cursor-pointer bg-gray-300 rounded-sm">Send Notification</button>
               </div>
         </form>

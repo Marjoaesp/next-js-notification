@@ -1,4 +1,4 @@
-import subscribe from "./webPush.js";
+
 //Check permissions
 const checkPermission = () => {
   if (!('serviceWorker' in navigator)) {
@@ -33,7 +33,6 @@ const main = async () => {
   checkPermission()
   await requestNotificationPermission()
   await registerSW()
-  await subscribe()
 }
 
 export default main;
