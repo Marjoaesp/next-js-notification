@@ -1,27 +1,26 @@
-const sendPushNotification = async () => {
-  if ('serviceWorker' in navigator && 'PushManager' in window) {
-    navigator.serviceWorker.ready.then(registration => {
-      const options = {
-        body: "this notif",
-        icon: "/icon-72x72.png",
-        vibrate: [100, 50, 20],
-        data: {
-          dateOfArrival: Date.now(),
-          primateKeys: "2"
+self.addEventListener('message', event => {
+  if (event.data && event.data.type === 'SEND_NOTIFICATION') {
+    const options = {
+      body: event.data.body,
+      icon: "/icon-192x192.png",
+      vibrate: [100, 50, 20],
+      data: {
+        dateOfArrival: Date.now(),
+        primaryKey: "2"
+      },
+      actions: [
+        {
+          action: "explore",
+          title: "Explore this new world",
+          icon: "/icon-192x192.png"
         },
-        actions: [
-          {
-            action: "explore",
-            title: "explore this new world",
-            icon: "/icon-72x72.png"
-          },
-          { action: "close", title: "Close", icon: "/icon-72x72.png" }
-        ]
-      };
-
-      registration.showNotification('Hello world!', options);
-    });
+        {
+          action: "close",
+          title: "Close",
+          icon: "/icon-192x192.png"
+        }
+      ]
+    };
+    self.registration.showNotification(event.data.title, options);
   }
-}
-
-export default sendPushNotification;
+});

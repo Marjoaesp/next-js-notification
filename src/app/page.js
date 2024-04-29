@@ -1,10 +1,23 @@
 "use client";
 import { useEffect } from "react";
 import main from "../../public/service-worker.js";
-import sendPushNotification from "../../public/sw.js";
 
 const page = () => {
-  
+  const sendPushNotification = async () => {
+    if ('serviceWorker' in navigator && 'PushManager' in window) {
+      const controller = navigator.serviceWorker.controller;
+      if (controller) {
+        // Enviamos un mensaje al service worker
+        controller.postMessage({
+          type: 'SEND_NOTIFICATION',
+          title: 'Hello world!',
+          body: 'This is a notification.'
+        });
+      } else {
+        console.error('No active service worker controller found.');
+      }
+    }
+  };
   
   return (
     <main className="bg-gray-200">
