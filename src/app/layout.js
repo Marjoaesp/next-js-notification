@@ -24,6 +24,7 @@ export default function RootLayout({ children }) {
         {children}
         <Script rel="preload" src="/service-worker.js" type="module" as="script" />
         <Script rel="preload" src="/sw.js" type="module" as="script" />
+        <Script rel="preload" src="/webPush.js" type="module" as="script" />
 
         </body>
     </html>
