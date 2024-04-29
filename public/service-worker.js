@@ -29,10 +29,21 @@ const registerSW = async () => {
   return registration;
 }
 
+const subscribe = async () => {
+  let sw = await navigator.serviceWorker.ready;
+  let push = await sw.pushManager.subscribe({ //subscribe to notification push, and returns the pushSubcription.
+
+    userVisibleOnly: true,
+    applicationServerKey:'BDSIh3BSC70FVGo3fo39aAgTLivEYZv3S60Mn-tGSJY0JTCxe76-TbW2llAXukQHm-Fwc6oiuEnvvDcIWxy57bA' //Public VAPID key
+  });
+  console.log(JSON.stringify(push));
+}
+
 const main = async () => {
   checkPermission()
   await requestNotificationPermission()
   await registerSW()
+  await subscribe()
 }
 
 export default main;
